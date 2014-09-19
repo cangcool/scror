@@ -1,4 +1,48 @@
 Rails.application.routes.draw do
+  resources :sprint_activity_types
+
+  resources :sprint_activities
+
+  resources :user_projects
+
+  resources :user_roles
+
+  resources :users
+
+  resources :sprint_chart_records
+
+  resources :charts
+
+  resources :task_position_people
+
+  resources :task_positions
+
+  resources :board_column_types
+
+  resources :sprint_board_columns
+
+  resources :default_board_columns
+
+  resources :sprint_task_types
+
+  resources :default_task_types
+
+  resources :tasks
+
+  resources :product_backlogs
+
+  resources :sprint_states
+
+  resources :sprints
+
+  resources :countries
+
+  resources :companies
+
+  resources :project_types
+
+  resources :projects
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

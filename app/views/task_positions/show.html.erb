@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @task_position.task_id %>
+</p>
+
+<p>
+  <strong>Sprint board column:</strong>
+  <%= @task_position.sprint_board_column_id %>
+</p>
+
+<p>
+  <strong>Is block:</strong>
+  <%= @task_position.is_block %>
+</p>
+
+<%= link_to 'Edit', edit_task_position_path(@task_position) %> |
+<%= link_to 'Back', task_positions_path %>

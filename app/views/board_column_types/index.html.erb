@@ -1,0 +1,29 @@
+<h1>Listing board_column_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Is charted</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @board_column_types.each do |board_column_type| %>
+      <tr>
+        <td><%= board_column_type.name %></td>
+        <td><%= board_column_type.description %></td>
+        <td><%= board_column_type.is_charted %></td>
+        <td><%= link_to 'Show', board_column_type %></td>
+        <td><%= link_to 'Edit', edit_board_column_type_path(board_column_type) %></td>
+        <td><%= link_to 'Destroy', board_column_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Board column type', new_board_column_type_path %>

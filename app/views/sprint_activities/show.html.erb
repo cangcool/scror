@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @sprint_activity.content %>
+</p>
+
+<p>
+  <strong>Spint:</strong>
+  <%= @sprint_activity.spint_id %>
+</p>
+
+<p>
+  <strong>Sprint activity type:</strong>
+  <%= @sprint_activity.sprint_activity_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_sprint_activity_path(@sprint_activity) %> |
+<%= link_to 'Back', sprint_activities_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@sprint_chart_record) do |f| %>
+  <% if @sprint_chart_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sprint_chart_record.errors.count, "error") %> prohibited this sprint_chart_record from being saved:</h2>
+
+      <ul>
+      <% @sprint_chart_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sprint_board_column_id %><br>
+    <%= f.number_field :sprint_board_column_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :task_total %><br>
+    <%= f.number_field :task_total %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

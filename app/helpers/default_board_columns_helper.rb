@@ -1,0 +1,2 @@
+module DefaultBoardColumnsHelper
+end

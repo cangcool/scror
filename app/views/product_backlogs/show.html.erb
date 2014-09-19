@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @product_backlog.content %>
+</p>
+
+<p>
+  <strong>Sprint:</strong>
+  <%= @product_backlog.sprint_id %>
+</p>
+
+<p>
+  <strong>Point:</strong>
+  <%= @product_backlog.point %>
+</p>
+
+<%= link_to 'Edit', edit_product_backlog_path(@product_backlog) %> |
+<%= link_to 'Back', product_backlogs_path %>

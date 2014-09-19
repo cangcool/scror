@@ -1,0 +1,29 @@
+<h1>Listing sprint_chart_records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sprint board column</th>
+      <th>Date</th>
+      <th>Task total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sprint_chart_records.each do |sprint_chart_record| %>
+      <tr>
+        <td><%= sprint_chart_record.sprint_board_column_id %></td>
+        <td><%= sprint_chart_record.date %></td>
+        <td><%= sprint_chart_record.task_total %></td>
+        <td><%= link_to 'Show', sprint_chart_record %></td>
+        <td><%= link_to 'Edit', edit_sprint_chart_record_path(sprint_chart_record) %></td>
+        <td><%= link_to 'Destroy', sprint_chart_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sprint chart record', new_sprint_chart_record_path %>

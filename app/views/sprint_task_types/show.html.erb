@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sprint_task_type.name %>
+</p>
+
+<p>
+  <strong>Sprint:</strong>
+  <%= @sprint_task_type.sprint_id %>
+</p>
+
+<p>
+  <strong>Color code:</strong>
+  <%= @sprint_task_type.color_code %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sprint_task_type.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_sprint_task_type_path(@sprint_task_type) %> |
+<%= link_to 'Back', sprint_task_types_path %>

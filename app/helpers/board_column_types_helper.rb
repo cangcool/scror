@@ -1,0 +1,2 @@
+module BoardColumnTypesHelper
+end

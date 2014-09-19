@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @default_task_type.name %>
+</p>
+
+<p>
+  <strong>Color code:</strong>
+  <%= @default_task_type.color_code %>
+</p>
+
+<%= link_to 'Edit', edit_default_task_type_path(@default_task_type) %> |
+<%= link_to 'Back', default_task_types_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sprint board column:</strong>
+  <%= @sprint_chart_record.sprint_board_column_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @sprint_chart_record.date %>
+</p>
+
+<p>
+  <strong>Task total:</strong>
+  <%= @sprint_chart_record.task_total %>
+</p>
+
+<%= link_to 'Edit', edit_sprint_chart_record_path(@sprint_chart_record) %> |
+<%= link_to 'Back', sprint_chart_records_path %>

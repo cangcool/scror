@@ -1,0 +1,2 @@
+module SprintBoardColumnsHelper
+end

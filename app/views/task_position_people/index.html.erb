@@ -1,0 +1,29 @@
+<h1>Listing task_position_people</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task position</th>
+      <th>User</th>
+      <th>Assigner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_position_people.each do |task_position_person| %>
+      <tr>
+        <td><%= task_position_person.task_position_id %></td>
+        <td><%= task_position_person.user_id %></td>
+        <td><%= task_position_person.assigner_id %></td>
+        <td><%= link_to 'Show', task_position_person %></td>
+        <td><%= link_to 'Edit', edit_task_position_person_path(task_position_person) %></td>
+        <td><%= link_to 'Destroy', task_position_person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task position person', new_task_position_person_path %>

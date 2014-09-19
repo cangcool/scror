@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @chart.name %>
+</p>
+
+<p>
+  <strong>Max x:</strong>
+  <%= @chart.max_x %>
+</p>
+
+<p>
+  <strong>Min x:</strong>
+  <%= @chart.min_x %>
+</p>
+
+<p>
+  <strong>Max y:</strong>
+  <%= @chart.max_y %>
+</p>
+
+<p>
+  <strong>Min y:</strong>
+  <%= @chart.min_y %>
+</p>
+
+<%= link_to 'Edit', edit_chart_path(@chart) %> |
+<%= link_to 'Back', charts_path %>

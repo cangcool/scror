@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sprint.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sprint.description %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @sprint.project_id %>
+</p>
+
+<p>
+  <strong>Sprint order number:</strong>
+  <%= @sprint.sprint_order_number %>
+</p>
+
+<p>
+  <strong>Start at:</strong>
+  <%= @sprint.start_at %>
+</p>
+
+<p>
+  <strong>End at:</strong>
+  <%= @sprint.end_at %>
+</p>
+
+<p>
+  <strong>Sprint state:</strong>
+  <%= @sprint.sprint_state_id %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @sprint.creator_id %>
+</p>
+
+<p>
+  <strong>Modifier:</strong>
+  <%= @sprint.modifier_id %>
+</p>
+
+<%= link_to 'Edit', edit_sprint_path(@sprint) %> |
+<%= link_to 'Back', sprints_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @board_column_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @board_column_type.description %>
+</p>
+
+<p>
+  <strong>Is charted:</strong>
+  <%= @board_column_type.is_charted %>
+</p>
+
+<%= link_to 'Edit', edit_board_column_type_path(@board_column_type) %> |
+<%= link_to 'Back', board_column_types_path %>

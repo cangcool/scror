@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sprint_board_column.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sprint_board_column.description %>
+</p>
+
+<p>
+  <strong>Sprint:</strong>
+  <%= @sprint_board_column.sprint_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sprint_board_column.user_id %>
+</p>
+
+<p>
+  <strong>Boardcolumn type:</strong>
+  <%= @sprint_board_column.boardcolumn_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_sprint_board_column_path(@sprint_board_column) %> |
+<%= link_to 'Back', sprint_board_columns_path %>

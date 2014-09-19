@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @default_board_column.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @default_board_column.description %>
+</p>
+
+<p>
+  <strong>Boardcolumn type:</strong>
+  <%= @default_board_column.boardcolumn_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_default_board_column_path(@default_board_column) %> |
+<%= link_to 'Back', default_board_columns_path %>
