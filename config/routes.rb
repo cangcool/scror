@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+#  get 'sessions/new'
+
   resources :sprint_activity_types
 
   resources :sprint_activities
@@ -42,6 +44,14 @@ Rails.application.routes.draw do
   resources :project_types
 
   resources :projects
+
+  resources :sessions
+
+  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "sign_up" => "users#new", :as => "sign_up"
+  
+  root 'users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

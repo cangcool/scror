@@ -42,6 +42,8 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '3.1.7'
+# Use pundit for authorization
+gem 'pundit', '0.3.0'
 
 # Production tools
 # use pg as interface to the PostgreSQL RDBMS

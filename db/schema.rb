@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919201157) do
+ActiveRecord::Schema.define(version: 20141001210940) do
 
   create_table "board_column_types", force: true do |t|
     t.string   "name"
@@ -70,7 +70,10 @@ ActiveRecord::Schema.define(version: 20140919201157) do
     t.integer  "point"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "project_id"
   end
+
+  add_index "product_backlogs", ["project_id"], name: "index_product_backlogs_on_project_id"
 
   create_table "project_types", force: true do |t|
     t.string   "name"
@@ -84,7 +87,7 @@ ActiveRecord::Schema.define(version: 20140919201157) do
     t.text     "description"
     t.datetime "start_at"
     t.datetime "end_at"
-    t.boolean  "is_active"
+    t.boolean  "is_active",       default: true, null: false
     t.integer  "user_id"
     t.integer  "company_id"
     t.integer  "project_type_id"
@@ -115,7 +118,10 @@ ActiveRecord::Schema.define(version: 20140919201157) do
     t.integer  "boardcolumn_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "board_column_type_id"
   end
+
+  add_index "sprint_board_columns", ["board_column_type_id"], name: "index_sprint_board_columns_on_board_column_type_id"
 
   create_table "sprint_chart_records", force: true do |t|
     t.integer  "sprint_board_column_id"
@@ -197,7 +203,8 @@ ActiveRecord::Schema.define(version: 20140919201157) do
   create_table "users", force: true do |t|
     t.string   "fullname"
     t.string   "username"
-    t.string   "password"
+    t.string   "password_hash"
+    t.string   "password_salt"
     t.string   "email"
     t.string   "avatar"
     t.boolean  "is_active"
