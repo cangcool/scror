@@ -17,6 +17,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # GET /users/sign_up
+  def sign_up
+    @user_sign_up = User.new
+  end
+
   # GET /users/1/edit
   def edit
   end
@@ -26,21 +31,31 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    #respond_to do |format|
-    #  if @user.save
-    #    format.html { redirect_to @user, notice: 'User was successfully created.' }
-    #    format.json { render action: 'show', status: :created, location: @user }
-    #  else
-    #    format.html { render action: 'new' }
-    #    format.json { render json: @user.errors, status: :unprocessable_entity }
-    #  end
-    #end
-    if @user.save
-      redirect_to root_url, :notice => "Signed up!"
-    else
-      render "new"
+    respond_to do |format|
+     if @user.save
+       format.html { redirect_to @user, notice: 'User was successfully created.' }
+       format.json { render action: 'show', status: :created, location: @user }
+     else
+       format.html { render action: 'new' }
+       format.json { render json: @user.errors, status: :unprocessable_entity }
+     end
     end
+  end
 
+  # POST /users_sign_up
+  # POST /users.json
+  def create_sign_up
+    @user_sign_up = User.new(user_params)
+
+    respond_to do |format|
+     if @user.save
+       format.html { redirect_to @user, notice: 'Signed Up!' }
+       format.json { render action: 'show', status: :created, location: @user }
+     else
+       format.html { render action: 'sign_up' }
+       format.json { render json: @user.errors, status: :unprocessable_entity }
+     end
+    end
   end
 
   # PATCH/PUT /users/1
