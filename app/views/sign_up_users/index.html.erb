@@ -1,0 +1,23 @@
+<h1>Listing sign_up_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sign_up_users.each do |sign_up_user| %>
+      <tr>
+        <td><%= link_to 'Show', sign_up_user %></td>
+        <td><%= link_to 'Edit', edit_sign_up_user_path(sign_up_user) %></td>
+        <td><%= link_to 'Destroy', sign_up_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sign up user', new_sign_up_user_path %>

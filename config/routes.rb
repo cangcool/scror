@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :demo_users
+
+  resources :sign_up_users
+
   resources :sprint_activity_types
 
   resources :sprint_activities
@@ -60,9 +64,9 @@ Rails.application.routes.draw do
   
   get 'log_in' => 'sessions#new'
   
-  get 'sign_up' => 'users#sign_up'
+  get 'sign_up' => 'sign_up_users#new'
   
-  post 'sign_up' => 'users#create_sign_up'
+  get 'demo' => 'demo_users#new'
   
   root 'pages#home'
 
