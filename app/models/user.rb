@@ -9,20 +9,20 @@ class User < ActiveRecord::Base
 
   before_save :encrypt_password
   
-  validates_presence_of :fullname, :if => :validate_presence_of_fullname?
-  validates_presence_of :username, :if => :validate_presence_of_username?
-  validates_uniqueness_of :username, :if => :validate_uniqueness_of_username?
-  validates_presence_of :password, :if => :validate_presence_of_password?
+  validates_presence_of :fullname, :if => :validates_presence_of_fullname?
+  validates_presence_of :username, :if => :validates_presence_of_username?
+  validates_uniqueness_of :username, :if => :validates_uniqueness_of_username?
+  validates_presence_of :password, :if => :validates_presence_of_password?
   validates_presence_of :email, :if => :validates_presence_of_email?
   validates_uniqueness_of :email, :if => :validates_uniqueness_of_email?
   validates_format_of :email, :with => /\A[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}\z/i
   
 
-  def validate_presence_of_fullname?
+  def validates_presence_of_fullname?
     true
   end
 
-  def validate_presence_of_username?
+  def validates_presence_of_username?
     true
   end
 
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     true
   end
 
-  def validate_presence_of_password?
+  def validates_presence_of_password?
     true
   end
 

@@ -1,12 +1,5 @@
 class SignUpUser < User
   validates_confirmation_of :password
+  validates_presence_of :password_confirmation
 
-  # Override method
-  def validate_presence_of_fullname?
-    false
-  end
-  # Override method
-  def validate_presence_of_username?
-    false
-  end
 end

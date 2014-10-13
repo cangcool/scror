@@ -27,22 +27,31 @@
     <%= f.label :end_at %><br>
     <%= f.datetime_select :end_at %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :is_active %><br>
     <%= f.check_box :is_active %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id %>
-  </div>
+  </div> -->
   <div class="field">
-    <%= f.label :company_id %><br>
-    <%= f.number_field :company_id %>
+    <% if @companies.nil? %>
+      <%= f.fields_for :company do |ff| %>
+        <%= ff.label :name %>
+        <%= ff.text_field :name %>
+      <% end %>
+    <% else %>
+    <%= collection_select(:project, :company_id, @companies, :id, :name, prompt: true) %>
+    <% end %>
+
+   <!--  <%= f.label :company_id %><br>
+    <%= f.number_field :company_id %> -->
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :project_type_id %><br>
     <%= f.number_field :project_type_id %>
-  </div>
+  </div> -->
   <div class="actions">
     <%= f.submit %>
   </div>

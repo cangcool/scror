@@ -73,7 +73,7 @@ class SignUpUsersController < ApplicationController
     def sign_up_user_params
       # params[:sign_up_user]
       # super.user_params
-      params.require(:sign_up_user).permit(:username, :password, :email, :password_salt, :password_hash)
+      params.require(:sign_up_user).permit(:fullname, :username, :password, :password_confirmation, :email)
     end
 
 end

@@ -15,6 +15,12 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    @companies = nil
+    if session[:user_id] 
+      if Company.find_by_user_id(session[:user_id]) 
+        @companies = Company.find_all_by_user_id(session[:user_id]) 
+      end
+    end
     #@project_type = ProjectType.new
   end
 
@@ -70,6 +76,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :description, :start_at, :end_at, :is_active, :user_id, :company_id, :project_type_id)
+      params.require(:project).permit(:name, :description, :start_at, :end_at, :is_active, :user_id, :company_id, :project_type_id, company_attributes: [ :id, :name ])
     end
 end
