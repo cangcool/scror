@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
-    @companies = nil
+    @project.company ||= Company.new 
     if session[:user_id] 
       if Company.find_by_user_id(session[:user_id]) 
         @companies = Company.find_all_by_user_id(session[:user_id]) 

@@ -36,13 +36,13 @@
     <%= f.number_field :user_id %>
   </div> -->
   <div class="field">
-    <% if @companies.nil? %>
+    <% if @companies %>
+    <%= collection_select(:project, :company_id, @companies, :id, :name, prompt: true) %>
+    <% else %>
       <%= f.fields_for :company do |ff| %>
-        <%= ff.label :name %>
+        <%= ff.label :name, 'Company name' %><br>
         <%= ff.text_field :name %>
       <% end %>
-    <% else %>
-    <%= collection_select(:project, :company_id, @companies, :id, :name, prompt: true) %>
     <% end %>
 
    <!--  <%= f.label :company_id %><br>
