@@ -1,6 +1,7 @@
 // // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap/jumbotron";
 
 // // make all images responsive by default
 // img {
@@ -16,9 +17,17 @@
 // // create your own classes
 // // to make views framework-neutral
 // .column {
-//   @extend .col-md-6;
+//   @extend .col-lg-4;
 //   @extend .text-center;
 //   }
+ .navbar-nav {
+  > li > a {
+    color: red;
+  }
+}
+  .col-lg-4 {
+  @extend .text-center;
+  }
 // .form {
 //   @extend .col-md-6;
 //   }
@@ -26,20 +35,25 @@
 //   @extend .col-md-6;
 //   @extend .text-center;
 //   }
-// .submit {
+// .submit {  
 //   @extend .btn;
 //   @extend .btn-primary;
 //   @extend .btn-lg;
-//   }
+// //   }
 .jumbotron{
   @extend .text-center;
-  background-color:transparent}
-.jumbotron .btn{font-size:21px;padding:14px 24px}
+  background-color:transparent;
+  .btn{
+    color: white;
+    font-size:21px;
+    padding:14px 24px;
+  }
+}
 // // apply styles to HTML elements
 // // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  background-color: #ddd;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
