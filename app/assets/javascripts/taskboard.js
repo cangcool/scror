@@ -1,30 +1,32 @@
  $(function() {
- var $gallery = $( "#gallery" ),
-$trash = $( "#trash" );
+ var $task = $( ".task-draggable" ),
+$column = $( ".boardcolumn-droppable" );
+$trash = $("#trash");
+
 // let the gallery items be draggable
-$( "li", $gallery ).draggable({
+$task.draggable({
 cancel: "a.ui-icon", // clicking an icon won't initiate dragging
 revert: "invalid", // when not dropped, the item will revert back to its initial position
-containment: "document",
+// containment: "document",
 helper: "clone",
-cursor: "move"
+scroll: true,
+scrollSensitivity: 100,
+cursor: "move",
 });
+
+// let the trash be droppable, accepting the gallery items
+$column.droppable({
+accept: $task,
+activeClass: "ui-state-highlight",
+});
+
 // let the trash be droppable, accepting the gallery items
 $trash.droppable({
-accept: "#gallery > li",
+accept: $task,
 activeClass: "ui-state-highlight",
-drop: function( event, ui ) {
-deleteImage( ui.draggable );
-}
 });
-// let the gallery be droppable as well, accepting items from the trash
-$gallery.droppable({
-accept: "#trash li",
-activeClass: "custom-state-active",
-drop: function( event, ui ) {
-recycleImage( ui.draggable );
-}
-});
+
+
 // image deletion function
 var recycle_icon = "<a href='link/to/recycle/script/when/we/have/js/off' title='Recycle this image' class='ui-icon ui-icon-refresh'>Recycle image</a>";
 function deleteImage( $item ) {
