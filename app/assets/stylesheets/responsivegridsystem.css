@@ -1,0 +1,88 @@
+
+
+/* RESPONSIVE GRID SYSTEM =============================================================================  */
+
+          #maincontentcontainer {
+    width: 100%;
+  }
+
+    .standardcontainer {
+      
+    }
+    
+    .darkcontainer {
+      background: rgba(102, 102, 102, 0.05);
+    }
+
+    .lightcontainer {
+      background: rgba(255, 255, 255, 0.33);
+    }
+    
+      #maincontent{
+        clear: both;
+        width: 80%; /* 1000px / 1250px */
+        font-size: 0.8125em; /* 13 / 16 */
+        max-width: 92.3em; /* 1200px / 13 */
+        margin: 0 auto;
+        padding: 1em 0px;
+        color: #333;
+        line-height: 1.5em;
+        position: relative;
+      }
+    
+      .maincontent{
+        clear: both;
+        width: 80%; /* 1000px / 1250px */
+        font-size: 0.8125em; /* 13 / 16 */
+        max-width: 92.3em; /* 1200px / 13 */
+        margin: 0 auto;
+        padding: 1em 0px;
+        color: #333;
+        line-height: 1.5em;
+        position: relative;
+      }
+
+
+.breaker { clear: both; }
+
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+#example .col {
+  background: #ccc;
+  background: rgba(204, 204, 204, 0.85);
+
+}
+
+/*  SAMPLE  ============================================================================= */
+
+#sample .col {
+  background: #ccc;
+  padding: 1em 0;
+  background: rgba(204, 204, 204, 0.85);
+
+}
+
+/*  CALCUATIONS  ============================================================================= */
+
+#calculated .col {
+  background: #ccc;
+  padding: 1em 0;
+  background: rgba(204, 204, 204, 0.85);
+
+}

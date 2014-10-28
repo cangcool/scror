@@ -32,6 +32,8 @@ gem 'uglifier', '2.1.1'
 gem 'coffee-rails', '4.0.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '3.0.4'
+# jQuery UI's JavaScript, CSS, and image files packaged for the Rails 3.1+ asset pipeline
+gem 'jquery-ui-rails', '5.0.2'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks', '1.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

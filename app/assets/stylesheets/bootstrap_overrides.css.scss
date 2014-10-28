@@ -20,11 +20,6 @@
 //   @extend .col-lg-4;
 //   @extend .text-center;
 //   }
- .navbar-nav {
-  > li > a {
-    color: red;
-  }
-}
   .col-lg-4 {
   @extend .text-center;
   }
